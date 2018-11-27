@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:600,700,800');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+html{
+    font-size: 1.3rem;
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, "Dosis", Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+main{
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid #aaa;
+}
+header{
+    background-image: url(../img/berkay-gumustekin-402114-unsplash.jpg);
+    /*img source "https://unsplash.com/photos/ngqyo2AYYnE"*/
+    background-size: cover;
+    background-position: center center;
+}
+header h1{
+    font-size: 2.5rem;
+    line-height: 4rem;
+    padding: 0rem 1rem;
+    color: hsl(37, 100%, 50%);
+    text-shadow: 1px 1px 4px hsl(0, 0%, 0%, 0.5);
+    vertical-align: top;
+    text-align: right;
+    min-height: 12rem;
+}
+header img{
+    width: 15%;
+    float:left;
+    margin: 0.5rem 1rem 0 0.5rem;
+}
+form{
+    background-color: hsl(23, 100%, 50%);
+    padding: 1rem 1rem 2rem;
+}
+.form-box{
+    padding: 0.25rem 0 1rem;
+}
+label{
+    display: block;
+    margin: 0;
+    padding: 0 0.2rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.06rem;
+    color: hsl(0, 0%, 100%);
+}
+input{
+    outline: none;
+    margin: 0;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.2rem;
+    width: 100%;
+    color: #835A59;
+    /*border-radius: 0px;*/
+    
+}
+input[type='text'],
+input[type='date'],
+input[type='number']{
+    border: 1px solid #ccc;
+}
+/*slider design*/
+input[type='range']{
+    -webkit-appearance: none; /*remove default settings*/
+    /*overflow: hidden;*/
+    width: 100%;
+    height: 15px;
+    outline : none; /*remove blue border*/
+    background: none;
+}
+/*thumb design*/
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    position: relative;
+    width: 13px;
+    height: 13px;
+    background: hsl(0, 100%, 50%);
+    border-radius: 8px;
+    margin-top: -3.2px;
+    box-shadow: 1px 1px 2px hsl(0, 0%, 20%, 0.5);
+}
+/*track design*/
+input[type='range']::-webkit-slider-runnable-track{
+    height: 100%;
+    cursor: pointer;
+    background: hsl(0, 0%, 100%);
+    border-radius: 8px;
+}
+input#min.price::after,
+input.price#max::after{
+    content: "$" attr(data-price);
+    display: block;
+    margin-right: -0.3rem;
+    margin-top: -1.75rem;
+    color: hsl(0, 0%, 100%);
+}
+.search-btn{
+    outline: none;
+    border: none;
+    box-shadow: 1px 1px 2px hsl(0, 0%, 20%, 0.5);
+    border-radius: 8px;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0.25rem 1rem;
+    background-color: hsl(0, 100%, 50%);
+    color: hsl(0, 0%, 100%);
+}
+.search-btn:focus{
+    color: hsl(0, 0%, 0%);
+    background-color: hsl(44, 100%, 50%);
+}
+@media all and (min-width:650px){
+    form{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .form-box{
+        flex-basis: 100%;
+    }
+    .form-box.check-in,
+    .form-box.check-out,
+    .form-box.min-price,
+    .form-box.max-price,
+    .form-box.dogs,
+    .form-box.search{
+        flex-basis: 50%;
+    }
+    .form-box.search{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    .form-box.dogs,
+    .form-box.min-price,
+    .form-box.max-price{
+        padding-right: 1rem;
+    }
+}
+@media all and (min-width:1000px){
+    main{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        max-width: 1200px;
+    }
+    header{
+        flex-basis: 30%;
+        background-size: auto 100%;
+        
+    }
+    header h1{
+        color: hsl(37, 100%, 50%);
+    }
+    form{
+        flex-basis: 70%;
+    }
+}
